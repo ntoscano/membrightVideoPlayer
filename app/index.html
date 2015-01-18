@@ -22,16 +22,15 @@
     <script src="components/version/version-directive.js"></script>
     <script src="components/version/interpolate-filter.js"></script>
 	<script src="deck.js"></script>
-</head>
+	<script src="deckGetter.js"></script>
+	<script src="embed.js"></script>
+	</head>
 <body ng-controller="DeckController as deckCTRL">
 	<div id="header" allign="left">
 		<h2>{{deckCTRL.deck.name}}</h2>
 	</div>
 	<div>
-		<div>
-			<iframe ng-src="{{deckCTRL.deck.videoUrl}}" width="640" height="360" frameborder="0" scrolling="no" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
-			</iframe>	
-		</div>
+		<embed-link></embed-link>	
 		<div class="tabs">
 			<ul class="tab-links">
        			<li class="active"><a href="#tab1">Tab #1</a></li>

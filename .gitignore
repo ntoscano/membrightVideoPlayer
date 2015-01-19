@@ -4,4 +4,11 @@ node_modules/
 bower_components/
 tmp
 .DS_Store
-.idea
+.idea[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+*.swp
+

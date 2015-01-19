@@ -33,8 +33,8 @@
 		deckGetter.getNextDeck = function(deck){
 			for(var x in decks){
 				if(deck == decks[x].deck.name){
-					var deck = decks[x];
-					console.log(deck + x + " line 37 ran");
+					var deck = decks[x].deck;
+					console.log(deck.content.sourceUrl + " " + x + " line 37 ran");
 					return deck;
 				}else{
 				console.log("Did not find deck");

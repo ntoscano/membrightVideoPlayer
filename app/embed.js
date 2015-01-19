@@ -3,7 +3,7 @@
 	var app = angular.module('app-directives', ['getDeck']);
 	app.directive("embedLink", ['$sce', function($sce){
 		return{
-			restrict: 'E',
+			restrict: 'A',
 			scope : {
 				deck : '='
 			},
@@ -23,7 +23,7 @@
 
 	app.directive('videoTitle', function(){
 		return{
-			restrict: 'E',
+			restrict: 'A',
 			scope: {
 				deck: '='
 			},

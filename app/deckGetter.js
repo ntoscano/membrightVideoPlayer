@@ -30,17 +30,127 @@
         },
 		{"createdAt": "2015-01-06T00:06:19.376840", "deck": {"access": "pu", "content": null, "createdAt": "2015-01-06T00:06:19.317557", "id": 211, "image": null, "inMarket": null, "marketPrice": null, "name": "More SAT words", "ownerId": 291, "resourceUri": "/api/v2/deck/211", "updatedAt": "2015-01-06T00:06:19.317614"}, "deckId": 211, "id": 755, "resourceUri": "/api/v2/userdeckstatus/755", "updatedAt": "2015-01-06T00:06:19.377029"}, {"createdAt": "2015-01-15T19:05:38.603176", "deck": {"access": "pu", "content": null, "createdAt": "2015-01-15T19:05:38.579966", "id": 213, "image": null, "inMarket": null, "marketPrice": null, "name": "Higher order functions", "ownerId": 291, "resourceUri": "/api/v2/deck/213", "updatedAt": "2015-01-15T19:05:38.580017"}, "deckId": 213, "id": 759, "resourceUri": "/api/v2/userdeckstatus/759", "updatedAt": "2015-01-15T19:05:38.603230"}]
 
-		deckGetter.getNextDeck = function(deck){
+		var cards = {
+  "meta": {
+    "limit": 1000,
+    "next": null,
+    "offset": 0,
+    "previous": null,
+    "totalCount": 4
+  },
+  "objects": [
+    {
+      "access": "pu",
+      "content": "{\"answer\":\"Fishing\",\"links\":[{\"label\":\"2:30\",\"url\":\"http:\/\/youtu.be\/Yocja_N5s1I?t=2m30s\"}],\"question\":\"What was the best hunting strategy of early humans?\"}",
+      "createdAt": "2015-01-18T00:35:02.515134",
+      "id": 5127,
+      "obj": {
+        "answer": "Fishing",
+        "links": [
+          {
+            "label": "2:30",
+            "url": "http:\/\/youtu.be\/Yocja_N5s1I?t=2m30s"
+          }
+        ],
+        "question": "What was the best hunting strategy of early humans?"
+      },
+      "ownerId": 291,
+      "resourceUri": "\/api\/v2\/card\/5127",
+      "type": "frontAndBack",
+      "updatedAt": "2015-01-20T04:17:33.291156"
+    },
+    {
+      "access": "pu",
+      "content": "{\"answer\":\"Everything.\",\"links\":[{\"label\":\"0:12\",\"url\":\"http:\/\/youtu.be\/Yocja_N5s1I?t=12s\"}],\"question\":\"What will be on the test?\"}",
+      "createdAt": "2015-01-18T00:31:49.279764",
+      "id": 5125,
+      "obj": {
+        "answer": "Everything.",
+        "links": [
+          {
+            "label": "0:12",
+            "url": "http:\/\/youtu.be\/Yocja_N5s1I?t=12s"
+          }
+        ],
+        "question": "What will be on the test?"
+      },
+      "ownerId": 291,
+      "resourceUri": "\/api\/v2\/card\/5125",
+      "type": "frontAndBack",
+      "updatedAt": "2015-01-20T04:01:46.457603"
+    },
+    {
+      "access": "pu",
+      "content": "{\"answer\":\"In various places around the world, using the plants early humans had at their disposal.\",\"links\":[{\"label\":\"3:08\",\"url\":\"http:\/\/youtu.be\/Yocja_N5s1I?t=3m8s\"}],\"question\":\"Where did agriculture develop?\"}",
+      "createdAt": "2015-01-18T00:36:44.795185",
+      "id": 5128,
+      "obj": {
+        "answer": "In various places around the world, using the plants early humans had at their disposal.",
+        "links": [
+          {
+            "label": "3:08",
+            "url": "http:\/\/youtu.be\/Yocja_N5s1I?t=3m8s"
+          }
+        ],
+        "question": "Where did agriculture develop?"
+      },
+      "ownerId": 291,
+      "resourceUri": "\/api\/v2\/card\/5128",
+      "type": "frontAndBack",
+      "updatedAt": "2015-01-20T04:19:16.397761"
+    },
+    {
+      "access": "pu",
+      "content": "{\"answer\":\"Hunting and gathering\",\"links\":[{\"label\":\"2:18\",\"url\":\"http:\/\/youtu.be\/Yocja_N5s1I?t=2m18s\"}],\"question\":\"15,000 years ago, what were humans doing to stay alive?\"}",
+      "createdAt": "2015-01-18T00:34:14.310298",
+      "id": 5126,
+      "obj": {
+        "answer": "Hunting and gathering",
+        "links": [
+          {
+            "label": "2:18",
+            "url": "http:\/\/youtu.be\/Yocja_N5s1I?t=2m18s"
+          }
+        ],
+        "question": "15,000 years ago, what were humans doing to stay alive?"
+      },
+      "ownerId": 291,
+      "resourceUri": "\/api\/v2\/card\/5126",
+      "type": "frontAndBack",
+      "updatedAt": "2015-01-20T04:16:23.319242"
+    }
+  ]
+} 
+
+
+ 
+		deckGetter.getNextDeck = function(deckName){
 			for(var x in decks){
-				if(deck == decks[x].deck.name){
+				if(deckName == decks[x].deck.name){
 					var deck = decks[x].deck;
-					console.log(deck.content.sourceUrl + " " + x + " line 37 ran");
+					deck.cards = cards.objects;
+					console.log(deck.cards + " " + x + " line 37 ran");
 					return deck;
 				}else{
 				console.log("Did not find deck");
 				}
 			};
 		};
+
    }]);
 
 })();
+
+
+
+
+
+
+
+
+
+
+
+
+
+

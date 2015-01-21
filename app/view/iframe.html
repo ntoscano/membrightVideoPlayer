@@ -1,4 +1,12 @@
-<div>
+<div class="col-sm-12 col-md-12 col-lg-7" id="iframe">
 	<iframe ng-src="{{videoEmbedUrl}}" width="640" height="360" frameborder="0" scrolling="no" webkitAllowFullScre    en mozallowfullscreen allowFullScreen>
 	</iframe>
+</div>
+
+<div class="col-sm-12 col-md-6 col-lg-4">
+        <h3>Cards</h3>
+    <div class="container" ng-repeat="card in cards">
+       <div class="card"> <h5>{{card.question}}</h5>
+        <h6>{{card.answer}}</h6></div>
+    </div>
 </div>

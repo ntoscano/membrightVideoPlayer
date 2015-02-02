@@ -18,6 +18,7 @@
 				firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 				var player;
+				var timer = 0;
 
 				$window.onYouTubeIframeAPIReady = function(){
 					player = new YT.Player(element.children()[0], {
@@ -25,8 +26,15 @@
 						width: scope.width,
 						videoId: scope.deck.sourceUrl.split("=")[1] 
 					});
-
 				};
+				scope.$on('seekTo', function(event, time){
+					console.log(time);
+					player.seekTo(time);
+				});
+				setInterval(function(){
+					timer = player.getCurrentTime();
+					console.log(timer);
+				}, 5000);
 			}
 		}
 	});
@@ -117,6 +125,11 @@
 							scope.cards[x].question = scope.deck.cards[x].obj.question
 							scope.cards[x].answer = scope.deck.cards[x].obj.answer
 							console.log(scope.cards + "test");
+						}
+						scope.seek = function(x){
+							console.log("x:", x)
+							console.log("time", scope.deck.cards[x].time);
+							scope.$emit('seek', scope.deck.cards[x].time);
 						}
 					}
 				}

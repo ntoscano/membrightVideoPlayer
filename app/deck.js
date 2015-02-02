@@ -6,6 +6,10 @@
 		console.log($scope.deck.name);
 		console.log($scope.deck.cards);
 		console.log($scope.deck.sourceUrl);
+		$scope.$on('seek', function(event, time){
+			console.log(time);
+			$scope.$broadcast('seekTo', time);
+		});
 
    	}]);
 })();

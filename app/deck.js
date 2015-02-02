@@ -5,6 +5,7 @@
 		$scope.deck = deckGetter.getNextDeck("The Agricultural Revolution");	
 		console.log($scope.deck.name);
 		console.log($scope.deck.cards);
+		console.log($scope.deck.sourceUrl);
 
    	}]);
 })();

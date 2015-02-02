@@ -128,8 +128,15 @@
 			for(var x in decks){
 				if(deckName == decks[x].deck.name){
 					var deck = decks[x].deck;
+					deck.sourceUrl = decks[x].deck.content.sourceUrl;
 					deck.cards = cards.objects;
-					console.log(deck.cards + " " + x + " line 37 ran");
+					for (var x in deck.cards){
+						time = deck.cards[x].obj.links[0].label.split(":");
+						time = [parseInt(time[0]), parseInt(time[1])];
+						deck.cards[x].time = time[0] * 60 + time[1];
+					};
+					console.log(deck.cards[0].time);
+					console.log(deck.sourceUrl + " " + x + " line 37 ran");
 					return deck;
 				}else{
 				console.log("Did not find deck");

@@ -8,7 +8,7 @@
 			scope: {
 				height: "@",
 				width: "@",
-				videoId: "@",
+				deck: "=",
 			},
 			template: '<div></div>',
 			link: function(scope, element){
@@ -23,8 +23,9 @@
 					player = new YT.Player(element.children()[0], {
 						height: scope.height,
 						width: scope.width,
-						videoId: "Yocja_N5s1I" 
+						videoId: scope.deck.sourceUrl.split("=")[1] 
 					});
+
 				};
 			}
 		}

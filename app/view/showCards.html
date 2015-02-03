@@ -1,7 +1,14 @@
 <div>
 		<h3>Cards</h3>
-    <div class="container" ng-repeat="card in cards">
-	   <div class="card"> <h5 ng-click="seek($index)">{{card.question}}</h5>
-		<h6>{{card.answer}}</h6></div>
+    <div class="container" id="cards" ng-repeat="card in cards">
+	   <div class="panel panel-default">
+	   		<div class="panel-heading">
+	   			<div class="panel-title">
+					<h5 ng-click="seek($index)">{{card.question}}</h5>
+				</div>
+			</div>
+		<div class="panel-body">
+			<h6>{{card.answer}}</h6>
+		</div>
     </div>
 </div>

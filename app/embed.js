@@ -34,7 +34,7 @@
 				setInterval(function(){
 					timer = player.getCurrentTime();
 					console.log(timer);
-				}, 5000);
+				}, 500);
 			}
 		}
 	});

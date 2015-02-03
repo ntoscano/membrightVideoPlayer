@@ -136,7 +136,24 @@
 			}
 		};
 	});
-
+	app.directive('highlightCard', function(){
+		return{
+			restrict: 'A',
+			scope: {
+				deck: '=',
+				time: '@',
+			},
+			templateUrl: "view/highlightCard.html",
+			compile: function(tElement, iElement, transclude){
+				return{
+					pre : function(scope, iElement, iAttrs){
+					},
+					post : function(scope, iElement, iArrtr){
+					}
+				}
+			}
+		}
+	});
 
 
 

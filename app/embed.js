@@ -93,7 +93,7 @@
 		return{
 			restrict: 'A',
 			scope: {
-				deck:'='
+				descri: '='
 			},
 			templateUrl: "view/description.html",
 			compile: function(tElement, tAttrs, transclude){
@@ -101,7 +101,7 @@
 					pre : function(scope, iElement, iAttrs){
 					},
 					post : function(scope, iElement, iAttrs){
-						scope.description = scope.deck.content.description
+					console.log(scope.descri) 
 					}
 				}
 			}

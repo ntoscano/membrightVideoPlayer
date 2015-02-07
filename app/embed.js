@@ -28,12 +28,10 @@
 					});
 				};
 				scope.$on('seekTo', function(event, time){
-					console.log(time);
 					player.seekTo(time);
 				});
 				setInterval(function(){
 					time = player.getCurrentTime();
-					//console.log("player time:", time);
 					scope.$emit('timer', time);
 				}, 500);
 			}
@@ -52,7 +50,6 @@
 					pre : function (scope, iElement, iAttrs) {
 					},
 					post : function (scope, iElement, iAttrs) {
-						console.log(scope.deck.name);
 						scope.videoEmbedUrl = $sce.trustAsResourceUrl(scope.deck.content.sourceUrl.replace("watch?v=","embed/"));
 					}
 				}
@@ -102,7 +99,6 @@
 					pre : function(scope, iElement, iAttrs){
 					},
 					post : function(scope, iElement, iAttrs){
-					console.log(scope.descri) 
 					}
 				}
 			}
@@ -125,11 +121,8 @@
 							scope.cards = scope.deck.cards
 							scope.cards[x].question = scope.deck.cards[x].obj.question
 							scope.cards[x].answer = scope.deck.cards[x].obj.answer
-							console.log(scope.cards + "test");
 						}
 						scope.seek = function(x){
-							console.log("x:", x)
-							console.log("time", scope.deck.cards[x].time);
 							scope.$emit('seek', scope.deck.cards[x].time);
 						}
 						scope.$on('highlight', function(event, Vtime){
@@ -142,8 +135,6 @@
 											scope.cards[n].highlight = 0;
 										};
 										scope.cards[c].highlight = 1;
-										console.log('success');
-										console.log(scope.cards[c].highlight);
 									};
 								};
 							});

@@ -32,7 +32,9 @@
 					player.seekTo(time);
 				});
 				setInterval(function(){
-					timer = player.getCurrentTime();
+					time = player.getCurrentTime();
+					//console.log("player time:", time);
+					//scope.$emit('timer', time);
 				}, 500);
 			}
 		}
@@ -130,31 +132,22 @@
 							console.log("time", scope.deck.cards[x].time);
 							scope.$emit('seek', scope.deck.cards[x].time);
 						}
+						scope.$on('highlight', function(event, Vtime){
+							var x = parseInt(Vtime)
+							console.log("x:", x);
+							for(c in scope.cards) {
+								var y = parseInt(scope.cards[c].time);
+								if(x - y < 2 && x - y > 0){
+								document.getElementById("cardHigh").className = "focus";
+								console.log('success');
+								};
+							};
+						});
 					}
 				}
 			}
 		};
 	});
-	app.directive('highlightCard', function(){
-		return{
-			restrict: 'A',
-			scope: {
-				deck: '=',
-				time: '@',
-			},
-			templateUrl: "view/highlightCard.html",
-			compile: function(tElement, iElement, transclude){
-				return{
-					pre : function(scope, iElement, iAttrs){
-					},
-					post : function(scope, iElement, iArrtr){
-					}
-				}
-			}
-		}
-	});
-
-
 
 
 

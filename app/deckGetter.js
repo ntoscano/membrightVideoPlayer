@@ -134,6 +134,7 @@
 						time = deck.cards[x].obj.links[0].label.split(":");
 						time = [parseInt(time[0]), parseInt(time[1])];
 						deck.cards[x].time = time[0] * 60 + time[1];
+						deck.cards[x].minTime = deck.cards[x].obj.links[0].label;
 					};
 					console.log(deck.cards[0].time);
 					console.log(deck.sourceUrl + " " + x + " line 37 ran");

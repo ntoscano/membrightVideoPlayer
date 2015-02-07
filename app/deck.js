@@ -10,6 +10,10 @@
 			console.log(time);
 			$scope.$broadcast('seekTo', time);
 		});
+		$scope.$on('timer', function(event, Vtime){
+			//console.log("deck time:", Vtime);
+			$scope.$broadcast('highlight', Vtime);
+		});
 		$scope.des = $scope.deck.content.description
 		console.log($scope.des);
    	}]);

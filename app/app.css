@@ -28,8 +28,6 @@
   content: "";
   padding: 0;
 }
-@media (max-width:1200px) {
-	.hideOnSM {
-		display:none !important;
-	}
+.focus{
+	border: 1px solid #DDDDDD;
 } 

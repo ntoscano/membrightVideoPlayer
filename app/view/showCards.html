@@ -1,6 +1,6 @@
 <div>
 	<h3>Cards</h3>
-   	<div id="cards" ng-repeat="card in cards"> 
+   	<div id="cards" ng-class="{'hLight': card.highlight == 1}" ng-repeat="card in cards"> 
    		<div ng-click="seek($index)" class="panel panel-default">
    			<div class="panel-heading">
    				<div class="panel-title">

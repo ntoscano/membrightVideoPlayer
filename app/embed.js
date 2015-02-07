@@ -34,7 +34,7 @@
 				setInterval(function(){
 					time = player.getCurrentTime();
 					//console.log("player time:", time);
-					//scope.$emit('timer', time);
+					scope.$emit('timer', time);
 				}, 500);
 			}
 		}
@@ -133,15 +133,20 @@
 							scope.$emit('seek', scope.deck.cards[x].time);
 						}
 						scope.$on('highlight', function(event, Vtime){
-							var x = parseInt(Vtime)
-							console.log("x:", x);
-							for(c in scope.cards) {
-								var y = parseInt(scope.cards[c].time);
-								if(x - y < 2 && x - y > 0){
-								document.getElementById("cardHigh").className = "focus";
-								console.log('success');
+							scope.$apply(function(){
+								var x = parseInt(Vtime)
+								for(var c in scope.cards) {
+									var y = parseInt(scope.cards[c].time);
+									if(x - y < 2 && x - y > 0){
+										for(var n in scope.cards){
+											scope.cards[n].highlight = 0;
+										};
+										scope.cards[c].highlight = 1;
+										console.log('success');
+										console.log(scope.cards[c].highlight);
+									};
 								};
-							};
+							});
 						});
 					}
 				}

@@ -29,9 +29,11 @@
 				};
 				scope.$on('seekTo', function(event, time){
 					player.seekTo(time);
+					var vtime = player.getCurrentTime();
+					scope.emit('timer', vtime);
 				});
 				setInterval(function(){
-					time = player.getCurrentTime();
+					var time = player.getCurrentTime();
 					scope.$emit('timer', time);
 				}, 500);
 			}

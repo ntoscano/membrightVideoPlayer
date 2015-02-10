@@ -1,15 +1,15 @@
 <div>
 	<h3>Cards</h3>
 	<p>Click a card to jump to the relevant time in the video.</p>
-   	<div id="cards" ng-class="{'hLight': card.highlight == 1}" ng-repeat="card in cards"> 
-   		<div style="cursor:pointer" ng-click="seek($index)" class="panel panel-default">
+   	<div id="cards" ng-class="{'hLight': card.highlight == 1}" ng-repeat="card in cards | orderBy: 'time'"> 
+   		<div style="cursor:pointer" ng-click="seek(card.time)" class="panel panel-default">
    			<div class="panel-heading">
    				<div class="panel-title">
 				<h5>{{card.question}} <p class="text-muted"> ({{card.minTime}})</p></h5>
 				</div>
 			</div>
 			<div class="panel-body">
-			<h6>{{card.answer}}</h6>
+			<h6 ng-bind-html="card.answer"></h6>
 			</div>
 		</div>
    	</div>

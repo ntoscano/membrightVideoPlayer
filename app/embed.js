@@ -124,8 +124,8 @@
 							scope.cards[x].question = scope.deck.cards[x].obj.question
 							scope.cards[x].answer = scope.deck.cards[x].obj.answer
 						}
-						scope.seek = function(x){
-							scope.$emit('seek', scope.deck.cards[x].time);
+						scope.seek = function(ctime){
+							scope.$emit('seek', ctime);
 						}
 						scope.$on('highlight', function(event, Vtime){
 							var x = parseInt(Vtime)

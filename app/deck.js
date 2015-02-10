@@ -9,6 +9,10 @@
 		$scope.$on('timer', function(event, Vtime){
 			$scope.$broadcast('highlight', Vtime);
 		});
+		$scope.$on('timer2', function(event, Vtime){
+			$scope.$broadcast('highlight2', Vtime);
+		});
+
 		$scope.des = $scope.deck.content.description
    	}]);
 })();

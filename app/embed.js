@@ -29,12 +29,12 @@
 				};
 				scope.$on('seekTo', function(event, time){
 					player.seekTo(time);
-					var vtime = player.getCurrentTime();
-					scope.emit('timer', vtime);
+					player.playVideo();
+					scope.$emit('timer', time);
 				});
 				setInterval(function(){
 					var time = player.getCurrentTime();
-					scope.$emit('timer', time);
+					scope.$emit('timer2', time);
 				}, 500);
 			}
 		}
@@ -128,18 +128,30 @@
 							scope.$emit('seek', scope.deck.cards[x].time);
 						}
 						scope.$on('highlight', function(event, Vtime){
-							scope.$apply(function(){
-								var x = parseInt(Vtime)
-								for(var c in scope.cards) {
-									var y = parseInt(scope.cards[c].time);
-									if(x - y < 2 && x - y > 0){
+							var x = parseInt(Vtime)
+							for(var c in scope.cards) {
+								var y = parseInt(scope.cards[c].time);
+								if(x - y < 2 && x - y > -1){	
+									for(var n in scope.cards){
+										scope.cards[n].highlight = 0;
+									};
+									scope.cards[c].highlight = 1;
+								};
+							};
+						});
+						scope.$on('highlight2', function(event, Vtime){
+							var x = parseInt(Vtime)
+							for(var c in scope.cards) {
+								var y = parseInt(scope.cards[c].time);
+								if(x - y < 2 && x - y > -1){	
+									scope.$apply(function(){
 										for(var n in scope.cards){
 											scope.cards[n].highlight = 0;
 										};
 										scope.cards[c].highlight = 1;
-									};
+									});
 								};
-							});
+							};
 						});
 					}
 				}

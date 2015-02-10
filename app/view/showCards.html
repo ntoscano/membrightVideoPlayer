@@ -1,12 +1,11 @@
 <div>
-	<h3>Cards</h3>
-	<p>Click a card to jump to the relevant time in the video.</p>
+	<h3>Cards<span class="text-muted">(try clicking)</span></h3>
 	<div class="scroll">
-	   	<div ng-class="{'hLight': card.highlight == 1}" ng-repeat="card in cards | orderBy: 'time'"> 
-   			<div style="cursor:pointer" ng-click="seek(card.time)" class="panel panel-default">
+	   	<div ng-repeat="card in cards | orderBy: 'time'"> 
+   			<div style="cursor:pointer" ng-click="seek(card.time)" ng-class="{'hLight': card.highlight == 1}" class="panel panel-default">
    				<div class="panel-heading">
    					<div class="panel-title">
-					<h5>{{card.question}} <p class="text-muted"> ({{card.minTime}})</p></h5>
+					<h5>{{card.question}} <span class="text-muted"> ({{card.minTime}})</span></h5>
 					</div>
 				</div>
 				<div class="panel-body">

@@ -50,4 +50,9 @@ a:active {
     color:#ff0000;
     background-color:transparent;
     text-decoration:underline;
+}
+div.scroll {
+    width: 400px;
+    height: 490px;
+    overflow: scroll;
 } 

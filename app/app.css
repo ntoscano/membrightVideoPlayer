@@ -53,6 +53,7 @@ a:active {
     text-decoration:underline;
 }
 div.scroll {
+	position: relative;
     width: 400px;
     height: 490px;
     overflow: scroll;

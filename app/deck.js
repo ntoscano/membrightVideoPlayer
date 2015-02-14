@@ -5,6 +5,7 @@
 
 		var deckId = 214; 
 		$scope.deck = deckGetter.getNextDeck(deckId);
+		$scope.des = $scope.deck.content.description;
 		console.log($scope.deck);
 
 //		var deckInfo = deckGetter.getNextDeck2(deckId);

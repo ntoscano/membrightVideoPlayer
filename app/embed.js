@@ -137,6 +137,7 @@
 										scope.cards[n].highlight = 0;
 									};
 									scope.cards[c].highlight = 1;
+									$('div.scroll').scrollTo('div.hLight');
 								};
 							};
 						});
@@ -150,6 +151,7 @@
 											scope.cards[n].highlight = 0;
 										};
 										scope.cards[c].highlight = 1;
+										$('div.scroll').scrollTo('div.hLight');
 									});
 								};
 							};

@@ -2,7 +2,25 @@
 	var app = angular.module('getDeck', ['app-service', 'ngSanitize']);
 
 	app.controller('DeckController',['$scope','$sce','deckGetter', function($scope, $sce, deckGetter){
-		$scope.deck = deckGetter.getNextDeck("The Agricultural Revolution");	
+
+		var deckId = 214; 
+		var deckInfo = deckGetter.getNextDeck2(deckId);
+
+		deckInfo.then(function(deck){
+			$scope.deck = deck;
+			deckInfo.cards.then(function(cards){
+				$scope.deck.cards = cards.objects;
+			})
+			for (var x in $scope.deck.cards){
+          		time = $scope.deck.cards[x].obj.links[0].label.split(":");
+        	    time = [parseInt(time[0]), parseInt(time[1])];
+    	        $scope.deck.cards[x].time = time[0] * 60 + time[1];
+	            $scope.deck.cards[x].minTime = $scope.deck.cards[x].obj.links[0].label;
+            }
+			$scope.des = $scope.deck.content.description;
+			if(!$scope.$$phase) $scope.$apply();
+		});
+
 		$scope.$on('seek', function(event, time){
 			$scope.$broadcast('seekTo', time);
 		});
@@ -13,6 +31,5 @@
 			$scope.$broadcast('highlight2', Vtime);
 		});
 
-		$scope.des = $scope.deck.content.description
    	}]);
 })();

@@ -2,6 +2,7 @@
 
 	var app = angular.module('app-directives', ['getDeck']);
 
+
 	app.directive('youtube', function($window){
 		return{
 			restrict: 'E',
@@ -24,7 +25,7 @@
 					player = new YT.Player(element.children()[0], {
 						height: scope.height,
 						width: scope.width,
-						videoId: scope.deck.sourceUrl.split("=")[1] 
+						videoId: scope.deck.content.sourceUrl.split("=")[1] 
 					});
 				};
 				scope.$on('seekTo', function(event, time){

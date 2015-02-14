@@ -21,7 +21,7 @@
     <script src="components/version/interpolate-filter.js"></script>
 	<script src="deck.js"></script>
 	<script src="deckGetter.js"></script>
-	<script src="embed.js"></script>
+	<script src="embed.js" defer></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
@@ -29,14 +29,14 @@
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body ng-controller="DeckController">
-	<div navbar-link deck="deck"></div>
+	<div ng-if="deck" navbar-link deck="deck"></div>
 	<br>
 	<br>
 	<div class="container">
 		<div video-title deck="deck"></div>
 		<div class="row">
 			<div class="col-sm-12 col-md-12 col-lg-7">
-				<youtube deck="deck" width="640" height="390"></youtube>
+				<youtube ng-if="deck" deck="deck" width="640" height="390"></youtube>
 				<div class="visible-lg-block" description descri="des" align="left"></div>
 				<div class="visible-lg-block">
 					<a href="http://membright.com/"><h3>Membright</h3></a>
@@ -47,7 +47,7 @@ Based on years of neuroscience research by top researchers around the world that
 					</p>
 				</div>
 			</div>
-			<div class="col-sm-12 col-md-12 col-lg-4" show-card deck="deck"></div>
+			<div ng-if="deck" class="col-sm-12 col-md-12 col-lg-4" show-card deck="deck"></div>
 		</div>
 	</div>
 </body>

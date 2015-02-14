@@ -132,7 +132,7 @@
 							var x = parseInt(Vtime)
 							for(var c in scope.cards) {
 								var y = parseInt(scope.cards[c].time);
-								if(x - y < 2 && x - y > -1){	
+								if(x - y < 1 && x - y > -1){	
 									for(var n in scope.cards){
 										scope.cards[n].highlight = 0;
 									};
@@ -145,7 +145,7 @@
 							var x = parseInt(Vtime)
 							for(var c in scope.cards) {
 								var y = parseInt(scope.cards[c].time);
-								if(x - y < 2 && x - y > -1){	
+								if(x - y < 1 && x - y > -1 ){	
 									scope.$apply(function(){
 										for(var n in scope.cards){
 											scope.cards[n].highlight = 0;

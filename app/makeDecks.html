@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en" ng-app="myApp" class="no-js">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Help Me Make Decks</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
+    <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="components/version/version.js"></script>
+    <script src="components/version/version-directive.js"></script>
+    <script src="components/version/interpolate-filter.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="app/bower_components/jquery.scrollTo/jquery.scrollTo.js"></script>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body ng-controller="DeckController">
+	
+<nav id="myNavBar" class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="http://membright.com/" target="_blank">Membright</a>
+			<ul class="nav navbar-nav">
+				<li><a  href="index.html" target="_blank"> Video Player</a></li>
+			</ul>
+        </div>
+        </div>
+    </div>
+</nav>	
+	<br>
+	<br>
+	<br>
+	<div class="container">
+		<div class="col-sm-12 col-md-12 col-lg-8">
+			<h1>How to Make a Deck</h1>
+			<p>1. Click the Membright link in the navigation bar and sign up for Membright<br>
+			   2. Once you sign in, navigate to the "My Decks" page or click <a href="http://membright.com/app/#/library" target="_blank">this link</a><br>
+			   3. Click "Create a New Deck".<br>
+			   4. "Deck Name" should be the title of the video.<br>
+			   5. "Deck Image" is optional.<br>
+			   6. "Description" can be copy-pasted from the video description on Youtube.<br>
+			   7. "Source URL" can be left blank for now. I'll go in and set it myself after you create the deck.<br>
+			   8. Click "Save" and continue to make cards.<br>
+			</p>
+			<h1>How to Make Cards</h1>
+			<p> Continuing from step 8 in "How to Make a Deck":<br>
+			   1. "Card Type" should be set to "Question and Answer".<br>
+			   2. "Question" can be set to either a question, or something that indicates the answer, depending on the content.<br>
+					Example:<br><br>
+					Question: Where did agriculture develop?<br>
+					Answer:...<br><br>
+				This is a pretty straight forward question and answer card, but with something like:<br><br>
+				Question: Advantages/Disadvantages of Agriculture:<br>
+				Answer:...<br><br>
+				The question isn't a "question", but you still have a good idea of what the answer is supposed to be.<br><br>
+			   3. "Answer" should be set to the information you want to remember.<br>
+			   4. Click the green "+" button<br>
+			   5. "Link 1 Label" needs to be set to the time of the video where this card is first relevant.<br><br>
+				Example:<br>
+				John Green first starts talking about where agriculture develped at time 3:08, so the Link Label should be "3:08"<br><br>
+			   6. "Link 1 URL" is obtained by going to the video on Youtube, clicking the share tab, clicking the "Start at" box and copying that link. 
+
+			</p>
+		</div>
+	</div>
+</body>
+</html>

@@ -239,16 +239,39 @@
 
 		deckGetter.getNextDeck2 = function(deckId){
 			var deck = {};
-			cardInfo = $.getJSON('http://membright.com/api/v2/card?deck__id=' + deckId + '&format=json&official=true', function(data){
-				var cards = data.objects;
-				return cards;
-			});
-			deckInfo = $.getJSON('http://membright.com/api/v2/deck/' + deckId + '?format=json', function(data){
-				var innerDeck = data;			
-				return innerDeck;
-			});
-			deckInfo.cards = cardInfo;
-			return deckInfo;
+			var cards = {};
+			cardInfo =  function(deckId){ 
+				 output = $.ajax({
+					url: 'http://membright.com/api/v2/card?deck__id='+deckId+'&format=jsonp&callback=?',
+					type: 'GET',
+					data: {},
+					dataType: 'jsonp',
+					success: function(data){
+						cards = data;
+						return cards;
+					},
+				});
+				return output;
+			};
+			cards = cardInfo(deckId);
+			console.log(cards);
+			deckInfo = function(deckId){
+				output = $.ajax({
+					url: 'https://membright.com/api/v2/deck/'+deckId+'?format=jsonp&callback=foo',
+					type: 'GET',
+					data: {},
+					dataType: 'jsonp',
+					success: function(data){
+						deck = data;
+						return deck;
+					},
+				});
+				return output;
+			};
+			deck = deckInfo(deckId);
+			console.log(deck);
+			deck.cards = cards;
+			return deck;
 		};	
    }]);
 })();

@@ -16,6 +16,7 @@
 			$scope.deck = deck;
 			if($scope.deck.content === null || $scope.deck.content.sourceUrl === undefined || $scope.deck.content.sourceUrl.indexOf('youtube') == -1 ){
 				window.location.href = "http://ntoscano.github.io/membrightVideoPlayer/app/index.html#?deck=214"
+				location.reload(true);
 			};
 			deckInfo.cards.then(function(cards){
 				$scope.deck.cards = cards.objects;

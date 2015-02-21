@@ -11,8 +11,10 @@
 		
 		deckInfo.then(function(deck){
 			$scope.deck = deck;
-			if($scope.deck.content.sourceUrl === undefined || $scope.deck.content.sourceUrl.indexOf('youtube') == -1 ){
-				alert("Please double check the Url and make sure 'deck' is set equal to an approprate deck Id");
+			if($scope.deck.content === null || $scope.deck.content.sourceUrl === undefined || $scope.deck.content.sourceUrl.indexOf('youtube') == -1 ){
+				var test = window.location.href
+				window.location.href = "http://ntoscano.github.io/membrightVideoPlayer/app/index.html#?deck=214"
+				alert("You were redirected. Please enjoy this video");
 			};
 			deckInfo.cards.then(function(cards){
 				$scope.deck.cards = cards.objects;
@@ -28,8 +30,9 @@
 			if(!$scope.$$phase) $scope.$apply();
 		});
 
-		if (isNaN(deckId) || deckStuff === undefined){
-			alert("Please double check the Url and make sure 'deck' is set equal to an appropriate deck Id");
+		if (isNaN(deckId) || deckInfo === undefined){
+			window.location.href = "http://ntoscano.github.io/membrightVideoPlayer/app/index.html#?deck=214"
+			alert("You were redirected. Please enjoy this video.");
 		};
 
 		$scope.$on('seek', function(event, time){

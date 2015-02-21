@@ -12,7 +12,6 @@
 		deckInfo.then(function(deck){
 			$scope.deck = deck;
 			if($scope.deck.content === null || $scope.deck.content.sourceUrl === undefined || $scope.deck.content.sourceUrl.indexOf('youtube') == -1 ){
-				var test = window.location.href
 				window.location.href = "http://ntoscano.github.io/membrightVideoPlayer/app/index.html#?deck=214"
 				alert("You were redirected. Please enjoy this video");
 			};

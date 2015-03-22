@@ -8,7 +8,7 @@
 					<h5>{{card.question}} <span class="text-muted"> ({{card.minTime}})</span></h5>
 					</div>
 				</div>
-				<div class="panel-body">
+				<div ng-show="card.highlight"  class="panel-body">
 				<h6 ng-bind-html="card.answer"></h6>
 				</div>
 			</div>

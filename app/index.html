@@ -36,10 +36,13 @@
 	<div class="container">
 		<div video-title deck="deck"></div>
 		<div class="row">
-			<div class="col-sm-12 col-md-12 col-lg-7">
-				<youtube ng-if="deck" deck="deck" width="640" height="390"></youtube>
-				<div class="visible-lg-block" description descri="des" align="left"></div>
-				<div class="visible-lg-block">
+			<!--<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 bubble">test</div>-->
+			<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+				<div class="embed-responsive embed-responsive-16by9">
+					<youtube class="embed-responsive-item" ng-if="deck" deck="deck" width="640" height="390"></youtube>
+				</div>
+				<div description descri="des" align="left"></div>
+				<div>
 					<a href="http://membright.com/" target="_blank"><h3>Membright</h3></a>
 					<p> 
 Like flashcards, but better. <a href="http://membright.com/" target="_blank">Membright</a> intelligently reorders information so you spend the least time but get the most benefit.
@@ -48,7 +51,8 @@ Based on years of neuroscience research by top researchers around the world that
 					</p>
 				</div>
 			</div>
-			<div ng-if="deck.cards" class="col-sm-12 col-md-12 col-lg-4" show-card deck="deck"></div>
+			<div ng-if="deck.cards" class="col-xs-3 col-sm-3 col-md-3 col-lg-3" show-card deck="deck"></div>
+		<!--	<div class="col-xs-1 col-xs-push-11 col-sm-1 col-sm-push-11 col-md-1 col-md-push-11 col-lg-1 col-lg-push-11 bubble2"></div>--->
 		</div>
 	</div>
 </body>

@@ -5,11 +5,12 @@
    			<div style="cursor:pointer" ng-click="seek(card.time)" ng-class="{'hLight': card.highlight == 1}" class="panel panel-default">
    				<div class="panel-heading">
    					<div class="panel-title">
-					<h5>{{card.question}} <span class="text-muted"> ({{card.minTime}})</span></h5>
+					<h5 ng-bind-html="card.question"></h5>
 					</div>
 				</div>
-				<div ng-show="card.highlight"  class="panel-body">
-				<h6 ng-bind-html="card.answer"></h6>
+				<div  class="panel-body">
+					<p id="cardAnswer" ng-show="card.highlight" ng-bind-html="card.answer"></p>
+					<div ng-hide="card.highlight"><img src="http://i.stack.imgur.com/LT3WE.png" height="20" width="25"><span class="text-muted">({{card.minTime}})</span> Click to find out.</div>
 				</div>
 			</div>
 	   	</div>

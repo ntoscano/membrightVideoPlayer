@@ -54,7 +54,7 @@ a:active {
 }
 div.scroll {
 	position: absolute;
-    width: 350px;
+    width: 400px;
     height: 320px;
     overflow-y: scroll;
 	overflow-x: hidden;

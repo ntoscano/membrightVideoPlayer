@@ -2,15 +2,15 @@
 	<h3>Flashcards</h3>
 	<div class="scroll" id="scroll">
 	   	<div ng-repeat="card in cards | orderBy: 'time'"> 
-   			<div style="cursor:pointer" ng-click="seek(card.time)" ng-class="{'hLight': card.highlight == 1}" class="panel panel-default">
+   			<div style="cursor:pointer" ng-click="seek(card.time, card.highlight)" ng-class="{'hLight': card.highlight == 1}" class="panel panel-default">
    				<div class="panel-heading">
    					<div class="panel-title">
 					<h5 ng-bind-html="card.question"></h5>
 					</div>
 				</div>
 				<div  class="panel-body">
-					<p id="cardAnswer" ng-show="card.highlight" ng-bind-html="card.answer"></p>
-					<div ng-hide="card.highlight"><img src="http://i.stack.imgur.com/LT3WE.png" height="20" width="25"><span class="text-muted">({{card.minTime}})</span> Click here to find out.</div>
+					<p id="cardAnswer" ng-show="card.open" ng-bind-html="card.answer"></p>
+					<div ng-hide="card.open"><img src="http://i.stack.imgur.com/LT3WE.png" height="20" width="25"><span class="text-muted">({{card.minTime}})</span> Click here to find out.</div>
 				</div>
 			</div>
 	   	</div>

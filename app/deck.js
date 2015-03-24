@@ -43,8 +43,6 @@
 			}
 			console.log($scope.deck.cards);
 		});
-
-
 		$scope.$on('seek', function(event, time){
 			$scope.$broadcast('seekTo', time);
 		});

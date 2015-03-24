@@ -65,6 +65,10 @@ div.scroll {
 	max-width: 100%;
 }
 
+.picture {
+	max-width: 100%
+}
+
 div.bubble2 
 {
 	position: relative;

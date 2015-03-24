@@ -126,10 +126,13 @@
 							scope.cards[x].answer = scope.deck.cards[x].obj.answer
 						}
 						scope.seek = function(ctime, clight){
+							
 							if(clight == 1){
 								for(var x in scope.cards){
 									if(scope.cards[x].highlight == 1){
 										scope.cards[x].open = 1;
+									}else{
+										scope.cards[x].open = 0;
 									}
 								}
 							}else{

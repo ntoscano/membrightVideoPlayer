@@ -1,5 +1,5 @@
 <div>
-	<h3>Flashcards</h3>
+	<h3>Timeline</h3>
 	<div class="scroll" id="scroll">
 	   	<div ng-repeat="card in cards | orderBy: 'time'"> 
    			<div style="cursor:pointer" ng-click="seek(card.time, card.highlight)" ng-class="{'hLight': card.highlight == 1}" class="panel panel-default">

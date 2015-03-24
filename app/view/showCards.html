@@ -10,7 +10,10 @@
 				</div>
 				<div  class="panel-body">
 					<p id="cardAnswer" ng-show="card.open" ng-bind-html="card.answer"></p>
-					<div ng-hide="card.open"><img src="http://i.stack.imgur.com/LT3WE.png" height="20" width="25"><span class="text-muted">({{card.minTime}})</span> Click here to find out.</div>
+					<div ng-hide="card.open"><img src="http://i.stack.imgur.com/LT3WE.png" height="20" width="25"><span class="text-muted">({{card.minTime}})</span> 
+					<span ng-hide="card.highlight">Click here to see this part of the video.</span>
+					<span ng-show="card.highlight"> Click to see the answer.</span>
+					</div>
 				</div>
 			</div>
 	   	</div>

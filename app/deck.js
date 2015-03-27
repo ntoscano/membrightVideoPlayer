@@ -9,13 +9,13 @@
 
 		var deckInfo = deckGetter.getNextDeck2(deckId);
 		if (isNaN(deckId) || deckInfo === undefined){
-			deckId = 214;
+			deckId = 237;
 			deckInfo = deckGetter.getNextDeck2(deckId);
 		};	
 		deckInfo.then(function(deck){
 			$scope.deck = deck;
 			if($scope.deck.content === null || $scope.deck.content.sourceUrl === undefined || $scope.deck.content.sourceUrl.indexOf('youtube') == -1 ){
-				window.location.href = "http://ntoscano.github.io/membrightVideoPlayer/app/index.html#?deck=214"
+				window.location.href = "http://ntoscano.github.io/membrightVideoPlayer/app/index.html#?deck=237"
 			};
 			deckInfo.cards.then(function(cards){
 				$scope.deck.cards = cards.objects;

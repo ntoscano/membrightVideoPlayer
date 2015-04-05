@@ -14,12 +14,13 @@
 		};	
 		deckInfo.then(function(deck){
 			$scope.deck = deck;
+			$scope.deck.url = "http://www.membright.com/app/#/search/" + $scope.deck.name.replace(" ", "_") + "/Deck/" + $scope.deck.id 
 			if($scope.deck.content === null || $scope.deck.content.sourceUrl === undefined || $scope.deck.content.sourceUrl.indexOf('youtube') == -1 ){
 				window.location.href = "http://ntoscano.github.io/membrightVideoPlayer/app/index.html#?deck=237"
 			};
 			deckInfo.cards.then(function(cards){
 				$scope.deck.cards = cards.objects;
-				console.log($scope.deck.cards);
+				console.log($scope.deck);
 				for (var x in $scope.deck.cards){
     	    		time = $scope.deck.cards[x].obj.links[0].label.split(":");
         		    time = [parseInt(time[0]), parseInt(time[1])];

@@ -54,8 +54,68 @@ a:active {
 }
 div.scroll {
 	position: absolute;
-    width: 400px;
-    height: 490px;
-    overflow: scroll;
-	padding: 0px 1px 200px 1px
-} 
+    width: 100%;
+    height: 315px;
+    overflow-y: scroll;
+	overflow-x: hidden;
+	padding: 0px 1px 100px 1px
+}
+
+.panel img {
+	max-width: 100%;
+}
+
+.picture {
+	max-width: 100%
+}
+
+div.bubble2 
+{
+	position: relative;
+	width: 100px;
+	height: 65px;
+	padding: 0px;
+	background: #76CCFF;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+div.bubble2:after 
+{
+	content: '';
+	position: absolute;
+	border-style: solid;
+	border-width: 15px 15px 15px 0;
+	border-color: transparent #76CCFF;
+	display: block;
+	width: 0;
+	z-index: 1;
+	left: -15px;
+	top: 17px;
+}
+div.bubble 
+{
+	position: relative;
+	width: 100px;
+	height: 70px;
+	padding: 0px;
+	background: #76CCFF;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+div.bubble:after 
+{
+	content: '';
+	position: absolute;
+	border-style: solid;
+	border-width: 15px 0 15px 15px;
+	border-color: transparent #76CCFF;
+	display: block;
+	width: 0;
+	z-index: 1;
+	right: -15px;
+	top: 20px;
+}

@@ -34,21 +34,58 @@
 	<br>
 	<br>
 	<div class="container">
-		<div video-title deck="deck"></div>
 		<div class="row">
-			<div class="col-sm-12 col-md-12 col-lg-7">
-				<youtube ng-if="deck" deck="deck" width="640" height="390"></youtube>
-				<div class="visible-lg-block" description descri="des" align="left"></div>
-				<div class="visible-lg-block">
-					<a href="http://membright.com/" target="_blank"><h3>Membright</h3></a>
-					<p> 
-Like flashcards, but better. <a href="http://membright.com/" target="_blank">Membright</a> intelligently reorders information so you spend the least time but get the most benefit.
+			<!--<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 bubble">test</div>-->
+			<div video-title deck="deck"></div>
+			<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
+				<div class="embed-responsive embed-responsive-16by9">
+					<youtube class="embed-responsive-item" ng-if="deck" deck="deck" width="640" height="390" webkit-playsinline></youtube>
+				</div>
+				<div class="hidden-xs" description descri="des" align="left"></div>
+				<div class="hidden-xs">
+					<h3> What's With the Timeline?</h3>
+					<p>
+					As you watch the video, the Timeline will point out the important information being discussed to help you follow along with the material. You can also click on the Timeline to jump to a specific time in the video or see the important content.<br><br>
+YouTube is host to some of the best educational videos of all time. But sometimes these videos are so dense, it's hard for me to keep up. That's why I built this web app, to help me follow along, and then later, go through the Timeline as flashcards in <a href="http://membright.com/" target="_blank">Membright</a> to make sure I don't forget the important details and facts.<br><br>
 
-Based on years of neuroscience research by top researchers around the world that aim to optimize information retention, Membright lets anyone use these proven methods with our content or by creating their own.
+This WebApp isn't worth much on it's own. To really extract the value of it, you would have to review the Timeline flashcards on a regular basis.<br><br>
+
+If you want to be able to use this Timeline flashcard deck, <a href="{{deck.url}}" target="_blank">click here</a>. Otherwise, just kick back, relax, and enjoy this great infotainment.
 					</p>
 				</div>
 			</div>
-			<div ng-if="deck.cards" class="col-sm-12 col-md-12 col-lg-4" show-card deck="deck"></div>
+			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+				<div ng-if="deck.cards" show-card deck="deck"></div>
+				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+				<h3>Available Videos:</h3>
+				<a href="http://ntoscano.github.io/membrightVideoPlayer/app/index.html#?deck=221" target="_blank">
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						<h4>Phases of the Moon:</h4>
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						<img class="picture" src="http://img.youtube.com/vi/AQ5vty8f9Xc/2.jpg">
+					</div>
+				</a>
+				<br><br><br><br><br>
+				<a href="http://ntoscano.github.io/membrightVideoPlayer/app/index.html#?deck=214" target="_blank">
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						<h4>The Agricultural Revolution:</h4>
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						<img class="picture" src="http://img.youtube.com/vi/Yocja_N5s1I/3.jpg">
+					</div>
+				</a>
+				<br><br><br><br><br>
+				<a href="http://ntoscano.github.io/membrightVideoPlayer/app/index.html#?deck=232" target="_blank">
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						<h4>Heredity:</h4>
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						<img class="picture" src="http://img.youtube.com/vi/CBezq1fFUEA/1.jpg">
+					</div>
+				</a>
+			</div>
+		<!--	<div class="col-xs-1 col-xs-push-11 col-sm-1 col-sm-push-11 col-md-1 col-md-push-11 col-lg-1 col-lg-push-11 bubble2"></div>-->
 		</div>
 	</div>
 </body>
